@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text is inside the div.
+  </div>
+
+  <script>
+    // Robust way to access element properties
+    const myDiv = document.getElementById('myDiv');
+    if (myDiv) {
+      // Check if the property exists before accessing it
+      if (myDiv.hasOwnProperty('nonExistentProperty')) {
+        let propertyValue = myDiv.nonExistentProperty;
+        console.log("Property value:", propertyValue);
+      } else {
+        console.log('Property "nonExistentProperty" does not exist.');
+      }
+    } else {
+      console.error('Element with id "myDiv" not found.');
+    }
+  </script>
+</body>
+</html>
