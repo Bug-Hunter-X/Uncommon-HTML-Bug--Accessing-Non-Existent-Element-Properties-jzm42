@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text is inside the div.
+  </div>
+
+  <script>
+    // Attempting to access a non-existent property of an element
+    // that only exists in a specific browser or version.
+    // This can lead to unexpected behavior or errors.
+    // This example may not throw an error in every browser
+    try {
+        let nonExistentProperty = document.getElementById('myDiv').nonExistentProperty;
+    } catch (e) {
+      console.error("Error: ",e);
+    }
+  </script>
+</body>
+</html>
